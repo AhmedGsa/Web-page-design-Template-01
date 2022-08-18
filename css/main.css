@@ -1,0 +1,403 @@
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.special-header {
+    text-align: center;
+    color: #ebeced;
+    font-weight: 800;
+    font-size: 90px;
+    margin: 0;
+    letter-spacing: -3px;
+}
+
+.special-header + p {
+    text-align: center;
+    color: #797979;
+    margin-top: -30px;
+    font-size: 20px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+}
+
+.links {
+    position: relative;
+}
+
+.links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa  ;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 200px;
+    display: none;
+    z-index: 1;
+}
+
+.links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #aaa transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.links ul a {
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+.links ul li:not(:last-child) a {
+    border-bottom: 1px solid black;
+}
+
+.links:hover .icon span:nth-child(2) {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.links:hover ul {
+    display: block;
+}
+
+.links a:hover {
+    padding-left: 25px;
+    transition: 0.4s;
+}
+
+.icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 30px;
+}
+
+.icon span {
+    margin-bottom: 5px;
+    height: 3px;
+    background-color: #333;
+}
+
+.icon span:first-child, .icon span:last-child {
+    width: 100%;
+}
+
+.icon span:nth-child(2) {
+    width: 60%;
+}
+
+.landing {
+    background-image: url(../images/background.jpg);
+    height: calc(100vh - 70px);
+    background-size: cover;
+    position: relative;
+}
+
+.landing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+}
+
+.landing h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.landing p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.features {
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.feat {
+    padding: 50px 0;
+}
+
+.feat h3 {
+    font-weight: 800;
+}
+
+.feat i {
+    color: var(--main-color);
+    font-size: 60px;
+}
+
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 30px;
+}
+.services-content img {
+    width: 250px;
+}
+.service {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.service i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.service h3 {
+    margin: -10px 0 0 0;
+}
+
+.services-content .services-col:last-child {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-img {
+    position: relative;
+    text-align: center;
+}
+
+.services-img::before {
+    position: absolute;
+    top: -25px;
+    right: -40px;
+    content: "";
+    width: 100px;
+    height: calc(100% + 50px);
+    background-color: var(--secondary-color);
+    z-index: -1;
+}
+
+@media (max-width: 1199px) {
+    .services-img {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .service {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.portfolio {
+    background-color: #fafafa;
+    padding: 50px 0;
+}
+
+.portfolio-content {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio .info {
+    padding: 15px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.portfolio .info h3 {
+    margin: 0;
+}
+
+.portfolio .info p {
+    margin-bottom: 0;
+}
+
+.portfolio img {
+    width: 100%;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.about-img {
+    width: 250px;
+    height: 350px;
+    position: relative;
+}
+
+.about-img::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: calc(100% + 100px);
+    background-color: #fafafa;
+    top: -50px;
+    left: -10px;
+    z-index: -1;
+}
+
+.about-img::after {
+    content: "";
+    position: absolute;
+    height: 255px;
+    width: 100px;
+    border-bottom: 70px solid var(--main-color);
+    border-left: 70px solid var(--main-color);
+    bottom: 50px;
+    left: 210px;
+    z-index: -1;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-content .text {
+    width: calc(100% - 500px);
+}
+
+.about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.about-content .text p:last-of-type {
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.about-content .text hr {
+    width: 50%;
+    border-color: var(--main-color);
+    margin-inline-start: 0;
+}
+
+.contact {
+    background-color: #fafafa;
+}
+
+.contact-content {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact-content h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.contact-content .text {
+    color: var(--secondary-color);
+}
+
+.contact-content .link {
+    text-decoration: none;
+    color: var(--main-color); 
+}
+
+.contact-content .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-content .social i {
+    margin-left: 10px;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+footer span {
+    color: var(--main-color);
+}
+
+@media (max-width: 991px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-content .text {
+        margin-top: 30px;
+        width: 80%;
+    }
+    .about-content .about-img::before, .about-content .about-img::after {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 850px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+    }
+}
